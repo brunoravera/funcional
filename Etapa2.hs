@@ -112,7 +112,8 @@ str2Math str = do (math, _ , zs) <- leeMXE marca escape str
 
 --- Los CODE contienen cualquier caracter con escape que no sea `
 str2Code :: String -> Maybe ( Fragmento , String )
-str2Code str = undefined
+str2Code str = do (code, _, zs) <- leeMXE marca escape str
+                  return ( CODE code , zs )
          where marca x = x == '`'
 
 --- Los TXT en Q contienen cualquier caracter con escape que no sea ` $ {
