@@ -102,7 +102,7 @@ getFragmento ( x :xs)
     | x `elem` ['{', '}', '=', '~'] =  Nothing
     | x == '$'                      = str2Math    xs
     | x == '`'                      = str2Code    xs
-    | otherwise                     = undefined
+    | otherwise                     = str2Txt     xs
 
 --- Los MATH contienen cualquier caracter con escape que no sea $
 str2Math :: String -> Maybe ( Fragmento , String )
