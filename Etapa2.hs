@@ -23,7 +23,15 @@ leeMOE m e (x:y:xs) = undefined
 --- devuelve Nothing.
 
 leeMXE :: (a -> Bool) -> (a -> Bool) -> [a] -> Maybe ([a], a, [a])
-leeMXE m e xs = undefined
+leeMXE m e xs = auxMXE m e False xs []
+
+auxMXE :: (a -> Bool) -> (a -> Bool) -> Bool -> [a] -> [a]-> Maybe ([a], a, [a])
+auxMXE m e a [] ls = Nothing
+auxMXE m e a [x] ls
+ | e x = Nothing
+auxMXE m e a (x:xs) ls
+ | not a = if m x then Just(ls, x, xs) else (auxMXE m e (e x) xs (ls++[x]))
+ | otherwise = (auxMXE m e (e x) xs (ls++[x]))
 
 --- El programa readFV recibe un String, y consume del mismo
 --- una palabra que representa un valor booleano de acuerdo
