@@ -118,7 +118,9 @@ str2Code str = do (code, _, zs) <- leeMXE marca escape str
 
 --- Los TXT en Q contienen cualquier caracter con escape que no sea ` $ {
 str2Txt :: String -> Maybe ( Fragmento , String )
-str2Txt str = undefined
+str2Txt str = do 
+  (txt,_,zs) <- leeMXE marca escape str
+  return (TXT txt, zs)
         where marca x = x `elem` ['`','$','{','}','~','=']
 
 
