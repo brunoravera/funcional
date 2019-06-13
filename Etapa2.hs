@@ -47,7 +47,16 @@ auxMXE m e a (x:xs) ls
 --- a la gramatica de GIFT*.
 
 readFV :: String -> Maybe (Bool, String)
-readFV str = undefined
+readFV str  
+  | str == "VERDADERO" = Just(True, "")
+  | str == "VERDAD" = Just(True, "")
+  | str == "V" = Just(True, "")
+  | str == "TRUE" = Just(True, "")
+  | str == "T" = Just(True, "")
+  | str == "FALSO" = Just(False, "")
+  | str == "FALSE" = Just(False, "")
+  | str == "F" = Just(False, "")
+  | otherwise = Nothing
   where wTrue  = [ "VERDADERO", "VERDAD", "V", "TRUE", "T" ]
         wFalse = [ "FALSO", "FALSE", "F" ]
 
