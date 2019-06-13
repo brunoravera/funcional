@@ -138,7 +138,8 @@ str2a xxs@(x:xs)
 
 leerOpcion :: String -> Maybe ( Opcion , String )
 leerOpcion ('}':xs) = Nothing
-leerOpcion ('=':xs) = undefined
+leerOpcion ('=':xs) = do (op, zs) <- getSeq getFragmento xs
+                         return (OK op , zs)
 leerOpcion ('~':xs) = do (op, zs) <- getSeq getFragmento xs
                          return (NOK op , zs)
 
