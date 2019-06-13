@@ -52,7 +52,7 @@ getEjercicios    []  = Just ([], [])
 getEjercicios xss = 
   do (a, ys) <- getEjercicio xss
      (bs, ws) <- getEjercicios ys
-     return (a:bs , ys++ws)
+     return (a:bs , ws)
 
 --- Predicado; decide si una línea es un comentario
 esComentario :: String -> Bool
@@ -78,7 +78,7 @@ getComs xs
 getComsAux :: [String] -> [String]
 getComsAux [] = []
 getComsAux (x:xs)
- | esComentario x = x : getComsAux xs
+ | esComentario x = addSpacesComs (drop 2 x) : getComsAux xs
  | otherwise = []
 
 getNotComsAux :: [String] -> [String]
@@ -86,6 +86,11 @@ getNotComsAux [] = []
 getNotComsAux(x:xs)
  | esComentario x = getNotComsAux xs
  | otherwise = x:xs
+
+addSpacesComs :: String -> String
+addSpacesComs x
+ | take 1 x == "/" = " " ++ addSpacesComs (drop 1 x)
+ | otherwise = x
 
 --- Un nombre está parentizado por "::".
 --- Debe empezar y terminar en una unica linea, y estar al comienzo.
@@ -105,9 +110,3 @@ getNombre _
 instance CCuerpo Char where
    getCuerpo xs = do (qas, z, zs) <- leeMX esComentario xs
                      return (unlines qas, z:zs)
-
-parseComments :: [Char] -> [Char]
-parseComments xs
-  | xs == [] = []
-  | head xs == '/' = " " ++ parseComments (tail xs)
-  | otherwise = xs
