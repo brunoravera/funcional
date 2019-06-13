@@ -15,7 +15,16 @@ leeMOE m e [x]
    | e x       = Nothing
    | m x       = Just ([ ],  Just x, [])
    | otherwise = Just ([x], Nothing, [])
-leeMOE m e (x:y:xs) = undefined
+leeMOE m e (x:y:xs) = auxMOE m e False (x:y:xs) [] 
+
+
+auxMOE :: (a -> Bool) -> (a -> Bool) -> Bool -> [a] -> [a]-> Maybe ([a], Maybe a, [a])
+auxMOE m e a [] ls = Just (ls, Nothing, [])
+auxMOE m e a [x] ls
+ | e x = Nothing
+auxMOE m e a (x:xs) ls
+ | not a = if m x then Just(ls, Just x, xs) else (auxMOE m e (e x) xs (ls++[x]))
+ | otherwise = (auxMOE m e (e x) xs (ls++[x]))
 
 --- El programa leeMXE lee una lista hasta encontrar una marca que no
 --- esté protegida por un ESCAPE. Si no encuentra
