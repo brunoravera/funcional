@@ -1,0 +1,14 @@
+CUESTIONARIO
+============
+
+PREGUNTA fv.1
+COMENTARIO INICIAL:  ejemplo de verdadero falso
+
+" Grant murio en 1886 { FALSO }\n"
+COMENTARIO FINAL:  fin de pregunta
+------------
+PREGUNTA mo.2
+COMENTARIO INICIAL:  ejemplo de multiple opcion
+" Los dos Reyes y los dos {=laberintos ~vasallos ~magos}\n"
+COMENTARIO FINAL:  fin de pregunta
+------------

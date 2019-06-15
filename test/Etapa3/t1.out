@@ -1,0 +1,14 @@
+CUESTIONARIO
+============
+
+PREGUNTA fv.1
+COMENTARIO INICIAL:  ejemplo de verdadero falso
+
+[Q [TXT "Grant murio en 1886"],A (FV False),Q [TXT ""]]
+COMENTARIO FINAL:  fin de pregunta
+------------
+PREGUNTA mo.2
+COMENTARIO INICIAL:  ejemplo de multiple opcion
+[Q [TXT "Los dos Reyes y los dos"],A (MO [OK [TXT "laberintos"],NOK [TXT "vasallos"],NOK [TXT "magos"]]),Q [TXT ""]]
+COMENTARIO FINAL:  fin de pregunta
+------------

@@ -1,0 +1,38 @@
+CUESTIONARIO
+============
+
+PREGUNTA fv.1
+COMENTARIO INICIAL:   ejemplo  de  verdadero falso
+[Q [TXT "Grant murio en 1886"],A (FV False),Q [TXT ""]]
+COMENTARIO FINAL:  fin de  pregunta
+------------
+PREGUNTA mo.1
+COMENTARIO INICIAL:   ejemplo  de  multiple  opcion
+[Q [TXT ""],A (MO [OK [TXT "Grant"],NOK [TXT "el gato de  Grant"],NOK [TXT "Tumbledore"]]),Q [TXT "esta sepultado  en la\ntumba de  Grant."]]
+COMENTARIO FINAL:  fin de  pregunta
+------------
+PREGUNTA mo.2
+COMENTARIO INICIAL:   ejemplo  de  multiple  opcion
+[Q [TXT "Indique quien esta sepultado  en la  tumba de  Grant."],A (MO [OK [TXT "Grant"],NOK [TXT "el gato de Grant"],NOK [TXT "Tumbledore"]]),Q [TXT ""]]
+COMENTARIO FINAL:  fin de  pregunta
+------------
+PREGUNTA  desarrollo .1
+COMENTARIO INICIAL:   ejemplo  de  desarrollo
+[Q [TXT "Cuente  acerca  de las  becas  que recibio Grant  como  estudiante."],A ESSAY,Q [TXT ""]]
+COMENTARIO FINAL:  fin de  pregunta
+------------
+PREGUNTA  corta .1
+COMENTARIO INICIAL:   ejemplo  de  respuesta  corta
+[Q [TXT "Quien esta sepultado  en la  tumba de  Grant ?"],A (SHORT [OK [TXT "Grant"],OK [TXT "Ulysses\nS. Grant"],OK [TXT "Ulysses  Grant"]]),Q [TXT ""]]
+COMENTARIO FINAL:  fin de  pregunta
+------------
+PREGUNTA  corta .2
+COMENTARIO INICIAL:   ejemplo  de  respuesta  corta
+[Q [TXT ""],A (SHORT [OK [TXT "Grant"],OK [TXT "Ulysses S. Grant"],OK [TXT "Ulysses  Grant"]]),Q [TXT "esta sepultado  en\nla  tumba de  Grant."]]
+COMENTARIO FINAL:  fin de  pregunta
+------------
+PREGUNTA  ejemplo  del  enunciado 
+COMENTARIO INICIAL: 
+[Q [TXT "Complete  el  programa",CODE "foo x = \"Si un  quilo de  papas\ncuesta $\" ++ x ++ \" entonces  dos  quilos  cuestan\" ++ ...",TXT ""],A ESSAY,Q [TXT ".\nCual es el tipo de",CODE "foo",TXT "?"],A (MO [OK [TXT "String  -> String"],NOK [CODE "Papa  -> Papa  -> Papa",TXT ""],NOK [CODE "$ -> $",TXT ""],NOK [MATH "->",TXT ""]]),Q [TXT ""]]
+COMENTARIO FINAL: 
+------------

@@ -1,0 +1,8 @@
+
+// ejemplo de verdadero falso
+//
+::fv.1:: Grant murio en 1886 { FALSO }
+// fin de pregunta
+
+// ejemplo de multiple opcion
+::mo.2:: Los dos Reyes y los dos {=laberintos ~vasallos ~magos}

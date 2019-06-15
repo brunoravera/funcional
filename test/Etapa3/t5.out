@@ -1,0 +1,8 @@
+CUESTIONARIO
+============
+
+PREGUNTA ej3
+COMENTARIO INICIAL: ejercicio que testea filtroFV
+[Q [TXT "verdaderas"],A (MO [OK [TXT "si"],NOK [TXT "nono"]]),Q [TXT ""]]
+COMENTARIO FINAL: 
+------------

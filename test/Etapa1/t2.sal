@@ -1,0 +1,38 @@
+CUESTIONARIO
+============
+
+PREGUNTA fv.1
+COMENTARIO INICIAL:   ejemplo  de  verdadero falso
+"  Grant murio en 1886 { FALSO }\n"
+COMENTARIO FINAL:  fin de  pregunta
+------------
+PREGUNTA mo.1
+COMENTARIO INICIAL:   ejemplo  de  multiple  opcion
+" {= Grant ~el gato de  Grant ~Tumbledore} esta sepultado  en la\ntumba de  Grant.\n"
+COMENTARIO FINAL:  fin de  pregunta
+------------
+PREGUNTA mo.2
+COMENTARIO INICIAL:   ejemplo  de  multiple  opcion
+"  Indique quien esta sepultado  en la  tumba de  Grant.{\n=Grant\n~el gato de Grant\n~Tumbledore\n}\n"
+COMENTARIO FINAL:  fin de  pregunta
+------------
+PREGUNTA  desarrollo .1
+COMENTARIO INICIAL:   ejemplo  de  desarrollo
+"  Cuente  acerca  de las  becas  que recibio Grant  como  estudiante. {}\n"
+COMENTARIO FINAL:  fin de  pregunta
+------------
+PREGUNTA  corta .1
+COMENTARIO INICIAL:   ejemplo  de  respuesta  corta
+" Quien esta sepultado  en la  tumba de  Grant ?{= Grant =Ulysses\nS. Grant =Ulysses  Grant}\n"
+COMENTARIO FINAL:  fin de  pregunta
+------------
+PREGUNTA  corta .2
+COMENTARIO INICIAL:   ejemplo  de  respuesta  corta
+" {= Grant =Ulysses S. Grant =Ulysses  Grant} esta sepultado  en\nla  tumba de  Grant.\n"
+COMENTARIO FINAL:  fin de  pregunta
+------------
+PREGUNTA  ejemplo  del  enunciado 
+COMENTARIO INICIAL: 
+"  Complete  el  programa  `foo x = \"Si un  quilo de  papas\ncuesta $\" ++ x ++ \" entonces  dos  quilos  cuestan\" ++ ... ` {}.\nCual es el tipo de `foo`?\n{~`Papa  -> Papa  -> Papa` ~`$ -> $` ~$ -> $ =String  -> String}\n"
+COMENTARIO FINAL: 
+------------

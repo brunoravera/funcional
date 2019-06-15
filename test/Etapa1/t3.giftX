@@ -1,0 +1,84 @@
+
+////
+::Sobrecarga_P18_1::Dada la siguiente definicion:
+`foo a b c d e = (snd . fst) ((a == e, b < e), c == d)`
+El tipo mas general es {
+ = `foo :: (Ord a, Eq b) \=> a -> a -> b -> b -> a -> Bool`
+ ~ `foo :: (Ord a) \=> a -> a -> a -> a -> a -> Bool` 
+ = `foo :: (Ord a, Ord b, Eq c, Eq d, Ord e) \=> a -> b -> c -> d -> e -> Bool` 
+ ~ No tiene  # Analice el tipo de `((a \=\= e, b < e), c \=\= d)`. Cuando puedo comparar dos valores?}
+///
+
+///
+::Otras_P18_3::Dada la siguiente definicion:
+`map' f = (map (uncurry ($))) . box`
+¿Cual de las siguientes implementaciones de `box` hace que `map'` sea equivalente a `map`? {
+ = `zip (repeat f)`
+ = No hay implementacion posible de `box` para eso.
+ = `zipWith f`
+ = `zip f`
+}
+///
+
+///
+::Otras_P18_4::Dada la siguiente definicion:
+`bar f n xs = concat $ map (f n) xs`
+Cual de las siguientes afirmaciones no es correcta? {
+ ~ `sum . bar const 1` $ \equiv $ `length`
+ ~ El tipo es `bar :: (a -> b -> [c]) -> a -> [b] -> [c]` 
+ ~ `bar take 2 [[1,2], [3,4,5]]` retorna `[1,2,3,4]` 
+ ~ `bar (\\f x -> [f x])` $ \equiv $ `map`  
+}
+///
+
+///
+::Algebraicos_P18_5::
+Cual de las siguientes afirmaciones es correcta? {
+ = Dado `t` de tipo `A`, `snd (copia t)` siempre diverge o retorna un entero no negativo
+ ~ El codigo no compila porque la definicion de `A` es incorrecta 
+ ~ El codigo no compila porque la definicion de `A` es incorrecta 
+ ~ El codigo no compila porque la definicion de `copia` es incorrecta 
+ ~ Dado `t` de tipo `A`, `fst (copia t)` siempre diverge o retorna `t`
+}
+///
+///
+
+///
+::Algebraicos_P18_5::
+Cual de las siguientes afirmaciones es correcta? {
+ = Dado `t` de tipo `A`, `snd (copia t)` siempre diverge o retorna un entero no negativo
+ ~ El codigo no compila porque la definicion de `A` es incorrecta 
+ ~ El codigo no compila porque la definicion de `copia` es incorrecta 
+ ~ Dado `t` de tipo `A`, `fst (copia t)` siempre diverge o retorna `t`
+ ~ El codigo no compila porque la definicion de `A` es incorrecta 
+}
+///
+
+///
+::Algebraicos_P18_6::Dadas las siguientes definiciones:
+`data T = C1 | C2 Int Int | C3 T T`, 
+`baz C1       = 0`,
+`baz (C2 x y) = x`, 
+`baz (C3 x y) = baz x`.
+¿Cual de las siguientes afirmaciones es correcta? {
+ = El resultado de evaluar `baz (C3 (C2 3 4) (C3 (C2 1 2) C1))` es `3`
+ ~ El resultado   de evaluar `baz (C3 (C2 3 4) (C3 (C2 1 2) C1))` es `7`
+ ~   El   resultado de   evaluar `baz (C3 (C2 3 4) (C3 (C2 1 2) C1))` es `7`
+ ~ El resultado de evaluar `baz (C3 (C2 3 4) (C3 (C2 1 2) C1))` es `1`
+ ~ El codigo no compila
+}
+///
+
+
+///
+::Fold_P18_7::Dada la siguiente definicion:
+`qux f []     ys = ys`
+`qux f (x:xs) ys = qux f xs (f x : ys)`
+Cual de las siguientes afirmaciones es correcta? {
+ = `qux f` $ \equiv $ `flip $ foldl (\\r x -> f x : r)`
+ ~ `qux f` $   \equiv $ `foldl (\\r x -> f x : r)`
+ ~ `qux f` $ \equiv + 2 $ `foldl (\\r x -> f x : r)`
+ ~ `qux f` $ \equiv +  2 $ `flip $ foldr (\\x r -> f x : r)`
+ ~ `qux f` $ \equiv $ `foldr (\\x r -> f x : r)` 
+}
+///

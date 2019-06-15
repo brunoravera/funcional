@@ -1,0 +1,10 @@
+
+////
+::Sobrecarga_P18_1::Dada la siguiente definicion:
+``foo a b c d e = (snd . fst) ((a == e, b < e), c == d)`
+El tipo mas general es {
+ = `foo :: (Ord a, Eq b) \=> a -> a -> b -> b -> a -> Bool`
+ ~ `foo :: (Ord a) \=> a -> a -> a -> a -> a -> Bool` 
+ = `foo :: (Ord a, Ord b, Eq c, Eq d, Ord e) \=> a -> b -> c -> d -> e -> Bool` 
+ ~ No tiene  # Analice el tipo de `((a \=\= e, b < e), c \=\= d)`. Cuando puedo comparar dos valores?}
+///

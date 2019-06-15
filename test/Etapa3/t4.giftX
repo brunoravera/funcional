@@ -1,0 +1,22 @@
+
+//ejercicio que testea mo2short
+::ej1::
+Quien es verdadero {=$3=3$ =`foo == foo` =Top}
+//
+
+//ejercicio que testea nodupMO
+::ej2::
+pregunta {=si =si =si ~noup ~no ~nop} mas texto
+//
+
+//ejercicio que testea shortMO
+::ej3::
+pregunta {~no1 =si1 ~no2 =si2} mas texto
+//
+
+//ejercicio que testea trim
+::ej4::
+quien es estrictamente positivo
+{=$ 1  +0 $ = uno =   unidad ~   diez ~ $0$} mas texto
+//
+

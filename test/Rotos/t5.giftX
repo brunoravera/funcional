@@ -1,0 +1,15 @@
+
+//ejercicio que testea filtroFV
+::ej1::
+son {VERDADERO}
+//
+
+//ejercicio que testea filtroFV
+::ej2::
+todas {VERDULERO} {VERDADERO} {V}
+//
+
+//ejercicio que testea filtroFV
+::ej3::
+verdaderas {=si ~nono}
+//

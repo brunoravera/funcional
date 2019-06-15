@@ -1,0 +1,554 @@
+\documentclass{gift}
+\begin{document}
+\begin{giftComentario}
+  
+\end  {giftComentario}
+\giftNombre{Sobrecarga_P18_1}
+\begin{giftFragmento}
+Dada la siguiente definicion:\end  {giftFragmento}
+
+\verb!foo a b c d e = (snd . fst) ((a == e, b < e), c == d)!
+\begin{giftFragmento}
+El tipo mas general es\end  {giftFragmento}
+
+
+\begin{giftMO}
+\item \begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!foo :: (Ord a, Eq b) \=> a -> a -> b -> b -> a -> Bool!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!foo :: (Ord a, Ord b, Eq c, Eq d, Ord e) \=> a -> b -> c -> d -> e -> Bool!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!foo :: (Ord a) \=> a -> a -> a -> a -> a -> Bool!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+No tiene  # Analice el tipo de\end  {giftFragmento}
+
+\verb!((a \=\= e, b < e), c \=\= d)!
+\begin{giftFragmento}
+. Cuando puedo comparar dos valores?\end  {giftFragmento}
+
+
+\end  {giftMO}
+
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\begin{giftComentario}
+ 
+\end  {giftComentario}
+
+\begin{giftComentario}
+ 
+\end  {giftComentario}
+\giftNombre{Otras_P18_3}
+\begin{giftFragmento}
+Dada la siguiente definicion:\end  {giftFragmento}
+
+\verb!map' f = (map (uncurry ($))) . box!
+\begin{giftFragmento}
+¿Cual de las siguientes implementaciones de\end  {giftFragmento}
+
+\verb!box!
+\begin{giftFragmento}
+hace que\end  {giftFragmento}
+
+\verb!map'!
+\begin{giftFragmento}
+sea equivalente a\end  {giftFragmento}
+
+\verb!map!
+\begin{giftFragmento}
+?\end  {giftFragmento}
+
+
+\begin{giftShort}
+\item \begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!zip (repeat f)!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+No hay implementacion posible de\end  {giftFragmento}
+
+\verb!box!
+\begin{giftFragmento}
+para eso.\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!zipWith f!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!zip f!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\end  {giftShort}
+
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\begin{giftComentario}
+ 
+\end  {giftComentario}
+
+\begin{giftComentario}
+ 
+\end  {giftComentario}
+\giftNombre{Otras_P18_4}
+\begin{giftFragmento}
+Dada la siguiente definicion:\end  {giftFragmento}
+
+\verb!bar f n xs = concat $ map (f n) xs!
+\begin{giftFragmento}
+Cual de las siguientes afirmaciones no es correcta?\end  {giftFragmento}
+
+
+\begin{giftMO}
+\item \begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!sum . bar const 1!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+$\equiv$
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!length!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+El tipo es\end  {giftFragmento}
+
+\verb!bar :: (a -> b -> [c]) -> a -> [b] -> [c]!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!bar take 2 [[1,2], [3,4,5]]!
+\begin{giftFragmento}
+retorna\end  {giftFragmento}
+
+\verb![1,2,3,4]!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!bar (\\f x -> [f x])!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+$\equiv$
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!map!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\end  {giftMO}
+
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\begin{giftComentario}
+ 
+\end  {giftComentario}
+
+\begin{giftComentario}
+ 
+\end  {giftComentario}
+\giftNombre{Algebraicos_P18_5}
+\begin{giftFragmento}
+Cual de las siguientes afirmaciones es correcta?\end  {giftFragmento}
+
+
+\begin{giftMO}
+\item \begin{giftFragmento}
+Dado\end  {giftFragmento}
+
+\verb!t!
+\begin{giftFragmento}
+de tipo\end  {giftFragmento}
+
+\verb!A!
+\begin{giftFragmento}
+,\end  {giftFragmento}
+
+\verb!snd (copia t)!
+\begin{giftFragmento}
+siempre diverge o retorna un entero no negativo\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+El codigo no compila porque la definicion de\end  {giftFragmento}
+
+\verb!A!
+\begin{giftFragmento}
+es incorrecta\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+El codigo no compila porque la definicion de\end  {giftFragmento}
+
+\verb!A!
+\begin{giftFragmento}
+es incorrecta\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+El codigo no compila porque la definicion de\end  {giftFragmento}
+
+\verb!copia!
+\begin{giftFragmento}
+es incorrecta\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+Dado\end  {giftFragmento}
+
+\verb!t!
+\begin{giftFragmento}
+de tipo\end  {giftFragmento}
+
+\verb!A!
+\begin{giftFragmento}
+,\end  {giftFragmento}
+
+\verb!fst (copia t)!
+\begin{giftFragmento}
+siempre diverge o retorna\end  {giftFragmento}
+
+\verb!t!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\end  {giftMO}
+
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\begin{giftComentario}
+ 
+ 
+\end  {giftComentario}
+
+\begin{giftComentario}
+ 
+\end  {giftComentario}
+\giftNombre{Algebraicos_P18_5}
+\begin{giftFragmento}
+Cual de las siguientes afirmaciones es correcta?\end  {giftFragmento}
+
+
+\begin{giftMO}
+\item \begin{giftFragmento}
+Dado\end  {giftFragmento}
+
+\verb!t!
+\begin{giftFragmento}
+de tipo\end  {giftFragmento}
+
+\verb!A!
+\begin{giftFragmento}
+,\end  {giftFragmento}
+
+\verb!snd (copia t)!
+\begin{giftFragmento}
+siempre diverge o retorna un entero no negativo\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+El codigo no compila porque la definicion de\end  {giftFragmento}
+
+\verb!A!
+\begin{giftFragmento}
+es incorrecta\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+El codigo no compila porque la definicion de\end  {giftFragmento}
+
+\verb!copia!
+\begin{giftFragmento}
+es incorrecta\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+Dado\end  {giftFragmento}
+
+\verb!t!
+\begin{giftFragmento}
+de tipo\end  {giftFragmento}
+
+\verb!A!
+\begin{giftFragmento}
+,\end  {giftFragmento}
+
+\verb!fst (copia t)!
+\begin{giftFragmento}
+siempre diverge o retorna\end  {giftFragmento}
+
+\verb!t!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+El codigo no compila porque la definicion de\end  {giftFragmento}
+
+\verb!A!
+\begin{giftFragmento}
+es incorrecta\end  {giftFragmento}
+
+
+\end  {giftMO}
+
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\begin{giftComentario}
+ 
+\end  {giftComentario}
+
+\begin{giftComentario}
+ 
+\end  {giftComentario}
+\giftNombre{Algebraicos_P18_6}
+\begin{giftFragmento}
+Dadas las siguientes definiciones:\end  {giftFragmento}
+
+\verb!data T = C1 | C2 Int Int | C3 T T!
+\begin{giftFragmento}
+,\end  {giftFragmento}
+
+\verb!baz C1       = 0!
+\begin{giftFragmento}
+,\end  {giftFragmento}
+
+\verb!baz (C2 x y) = x!
+\begin{giftFragmento}
+,\end  {giftFragmento}
+
+\verb!baz (C3 x y) = baz x!
+\begin{giftFragmento}
+.
+¿Cual de las siguientes afirmaciones es correcta?\end  {giftFragmento}
+
+
+\begin{giftMO}
+\item \begin{giftFragmento}
+El resultado de evaluar\end  {giftFragmento}
+
+\verb!baz (C3 (C2 3 4) (C3 (C2 1 2) C1))!
+\begin{giftFragmento}
+es\end  {giftFragmento}
+
+\verb!3!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+El resultado   de evaluar\end  {giftFragmento}
+
+\verb!baz (C3 (C2 3 4) (C3 (C2 1 2) C1))!
+\begin{giftFragmento}
+es\end  {giftFragmento}
+
+\verb!7!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+El   resultado de   evaluar\end  {giftFragmento}
+
+\verb!baz (C3 (C2 3 4) (C3 (C2 1 2) C1))!
+\begin{giftFragmento}
+es\end  {giftFragmento}
+
+\verb!7!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+El resultado de evaluar\end  {giftFragmento}
+
+\verb!baz (C3 (C2 3 4) (C3 (C2 1 2) C1))!
+\begin{giftFragmento}
+es\end  {giftFragmento}
+
+\verb!1!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+El codigo no compila\end  {giftFragmento}
+
+
+\end  {giftMO}
+
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\begin{giftComentario}
+ 
+\end  {giftComentario}
+
+\begin{giftComentario}
+ 
+\end  {giftComentario}
+\giftNombre{Fold_P18_7}
+\begin{giftFragmento}
+Dada la siguiente definicion:\end  {giftFragmento}
+
+\verb!qux f []     ys = ys!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!qux f (x:xs) ys = qux f xs (f x : ys)!
+\begin{giftFragmento}
+Cual de las siguientes afirmaciones es correcta?\end  {giftFragmento}
+
+
+\begin{giftMO}
+\item \begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!qux f!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+$\equiv$
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!flip $ foldl (\\r x -> f x : r)!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!qux f!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+$\equiv$
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!foldl (\\r x -> f x : r)!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!qux f!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+$\equiv + 2$
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!foldl (\\r x -> f x : r)!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!qux f!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+$\equiv +  2$
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!flip $ foldr (\\x r -> f x : r)!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\item \begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!qux f!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+$\equiv$
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+\verb!foldr (\\x r -> f x : r)!
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\end  {giftMO}
+
+\begin{giftFragmento}
+\end  {giftFragmento}
+
+
+\begin{giftComentario}
+ 
+\end  {giftComentario}
+
+\end{document}

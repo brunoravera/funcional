@@ -1,0 +1,23 @@
+CUESTIONARIO
+============
+
+PREGUNTA ej1
+COMENTARIO INICIAL: ejercicio que testea mo2short
+[Q [TXT "Quien es verdadero"],A (SHORT [OK [MATH "3=3",TXT ""],OK [CODE "foo == foo",TXT ""],OK [TXT "Top"]]),Q [TXT ""]]
+COMENTARIO FINAL: 
+------------
+PREGUNTA ej2
+COMENTARIO INICIAL: ejercicio que testea nodupMO
+[Q [TXT "pregunta"],A (MO [OK [TXT "si"],NOK [TXT "noup"],NOK [TXT "no"],NOK [TXT "nop"]]),Q [TXT "mas texto"]]
+COMENTARIO FINAL: 
+------------
+PREGUNTA ej3
+COMENTARIO INICIAL: ejercicio que testea shortMO
+[Q [TXT "pregunta"],A (MO [OK [TXT "si1"],OK [TXT "si2"],NOK [TXT "no1"],NOK [TXT "no2"]]),Q [TXT "mas texto"]]
+COMENTARIO FINAL: 
+------------
+PREGUNTA ej4
+COMENTARIO INICIAL: ejercicio que testea trim
+[Q [TXT "quien es estrictamente positivo"],A (MO [OK [MATH "1  +0",TXT ""],OK [TXT "uno"],OK [TXT "unidad"],NOK [TXT "diez"],NOK [TXT "",MATH "0"]]),Q [TXT "mas texto"]]
+COMENTARIO FINAL: 
+------------

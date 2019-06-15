@@ -1,0 +1,39 @@
+CUESTIONARIO
+============
+
+PREGUNTA Sobrecarga_P18_1
+COMENTARIO INICIAL:   
+[Q [TXT "Dada la siguiente definicion:",CODE "foo a b c d e = (snd . fst) ((a == e, b < e), c == d)",TXT "El tipo mas general es"],A (MO [OK [TXT "",CODE "foo :: (Ord a, Eq b) \\=> a -> a -> b -> b -> a -> Bool",TXT ""],OK [TXT "",CODE "foo :: (Ord a, Ord b, Eq c, Eq d, Ord e) \\=> a -> b -> c -> d -> e -> Bool",TXT ""],NOK [TXT "",CODE "foo :: (Ord a) \\=> a -> a -> a -> a -> a -> Bool",TXT ""],NOK [TXT "No tiene  # Analice el tipo de",CODE "((a \\=\\= e, b < e), c \\=\\= d)",TXT ". Cuando puedo comparar dos valores?"]]),Q [TXT ""]]
+COMENTARIO FINAL:  
+------------
+PREGUNTA Otras_P18_3
+COMENTARIO INICIAL:  
+[Q [TXT "Dada la siguiente definicion:",CODE "map' f = (map (uncurry ($))) . box",TXT "\191Cual de las siguientes implementaciones de",CODE "box",TXT "hace que",CODE "map'",TXT "sea equivalente a",CODE "map",TXT "?"],A (SHORT [OK [TXT "",CODE "zip (repeat f)",TXT ""],OK [TXT "No hay implementacion posible de",CODE "box",TXT "para eso."],OK [TXT "",CODE "zipWith f",TXT ""],OK [TXT "",CODE "zip f",TXT ""]]),Q [TXT ""]]
+COMENTARIO FINAL:  
+------------
+PREGUNTA Otras_P18_4
+COMENTARIO INICIAL:  
+[Q [TXT "Dada la siguiente definicion:",CODE "bar f n xs = concat $ map (f n) xs",TXT "Cual de las siguientes afirmaciones no es correcta?"],A (MO [NOK [TXT "",CODE "sum . bar const 1",TXT "",MATH "\\equiv",TXT "",CODE "length",TXT ""],NOK [TXT "El tipo es",CODE "bar :: (a -> b -> [c]) -> a -> [b] -> [c]",TXT ""],NOK [TXT "",CODE "bar take 2 [[1,2], [3,4,5]]",TXT "retorna",CODE "[1,2,3,4]",TXT ""],NOK [TXT "",CODE "bar (\\\\f x -> [f x])",TXT "",MATH "\\equiv",TXT "",CODE "map",TXT ""]]),Q [TXT ""]]
+COMENTARIO FINAL:  
+------------
+PREGUNTA Algebraicos_P18_5
+COMENTARIO INICIAL:  
+[Q [TXT "Cual de las siguientes afirmaciones es correcta?"],A (MO [OK [TXT "Dado",CODE "t",TXT "de tipo",CODE "A",TXT ",",CODE "snd (copia t)",TXT "siempre diverge o retorna un entero no negativo"],NOK [TXT "El codigo no compila porque la definicion de",CODE "A",TXT "es incorrecta"],NOK [TXT "El codigo no compila porque la definicion de",CODE "A",TXT "es incorrecta"],NOK [TXT "El codigo no compila porque la definicion de",CODE "copia",TXT "es incorrecta"],NOK [TXT "Dado",CODE "t",TXT "de tipo",CODE "A",TXT ",",CODE "fst (copia t)",TXT "siempre diverge o retorna",CODE "t",TXT ""]]),Q [TXT ""]]
+COMENTARIO FINAL:  
+ 
+------------
+PREGUNTA Algebraicos_P18_5
+COMENTARIO INICIAL:  
+[Q [TXT "Cual de las siguientes afirmaciones es correcta?"],A (MO [OK [TXT "Dado",CODE "t",TXT "de tipo",CODE "A",TXT ",",CODE "snd (copia t)",TXT "siempre diverge o retorna un entero no negativo"],NOK [TXT "El codigo no compila porque la definicion de",CODE "A",TXT "es incorrecta"],NOK [TXT "El codigo no compila porque la definicion de",CODE "copia",TXT "es incorrecta"],NOK [TXT "Dado",CODE "t",TXT "de tipo",CODE "A",TXT ",",CODE "fst (copia t)",TXT "siempre diverge o retorna",CODE "t",TXT ""],NOK [TXT "El codigo no compila porque la definicion de",CODE "A",TXT "es incorrecta"]]),Q [TXT ""]]
+COMENTARIO FINAL:  
+------------
+PREGUNTA Algebraicos_P18_6
+COMENTARIO INICIAL:  
+[Q [TXT "Dadas las siguientes definiciones:",CODE "data T = C1 | C2 Int Int | C3 T T",TXT ",",CODE "baz C1       = 0",TXT ",",CODE "baz (C2 x y) = x",TXT ",",CODE "baz (C3 x y) = baz x",TXT ".\n\191Cual de las siguientes afirmaciones es correcta?"],A (MO [OK [TXT "El resultado de evaluar",CODE "baz (C3 (C2 3 4) (C3 (C2 1 2) C1))",TXT "es",CODE "3",TXT ""],NOK [TXT "El resultado   de evaluar",CODE "baz (C3 (C2 3 4) (C3 (C2 1 2) C1))",TXT "es",CODE "7",TXT ""],NOK [TXT "El   resultado de   evaluar",CODE "baz (C3 (C2 3 4) (C3 (C2 1 2) C1))",TXT "es",CODE "7",TXT ""],NOK [TXT "El resultado de evaluar",CODE "baz (C3 (C2 3 4) (C3 (C2 1 2) C1))",TXT "es",CODE "1",TXT ""],NOK [TXT "El codigo no compila"]]),Q [TXT ""]]
+COMENTARIO FINAL:  
+------------
+PREGUNTA Fold_P18_7
+COMENTARIO INICIAL:  
+[Q [TXT "Dada la siguiente definicion:",CODE "qux f []     ys = ys",TXT "",CODE "qux f (x:xs) ys = qux f xs (f x : ys)",TXT "Cual de las siguientes afirmaciones es correcta?"],A (MO [OK [TXT "",CODE "qux f",TXT "",MATH "\\equiv",TXT "",CODE "flip $ foldl (\\\\r x -> f x : r)",TXT ""],NOK [TXT "",CODE "qux f",TXT "",MATH "\\equiv",TXT "",CODE "foldl (\\\\r x -> f x : r)",TXT ""],NOK [TXT "",CODE "qux f",TXT "",MATH "\\equiv + 2",TXT "",CODE "foldl (\\\\r x -> f x : r)",TXT ""],NOK [TXT "",CODE "qux f",TXT "",MATH "\\equiv +  2",TXT "",CODE "flip $ foldr (\\\\x r -> f x : r)",TXT ""],NOK [TXT "",CODE "qux f",TXT "",MATH "\\equiv",TXT "",CODE "foldr (\\\\x r -> f x : r)",TXT ""]]),Q [TXT ""]]
+COMENTARIO FINAL:  
+------------

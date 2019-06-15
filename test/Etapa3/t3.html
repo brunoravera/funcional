@@ -1,0 +1,709 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="gift.css">
+	</head>
+	<body>
+<div class="giftComentario">
+  
+</div>
+<span class="giftNombre">
+Sobrecarga_P18_1</span>
+<div class="giftFragmento">
+Dada la siguiente definicion:</div>
+
+<span class="giftCode">
+foo a b c d e = (snd . fst) ((a == e, b < e), c == d)</span>
+
+<div class="giftFragmento">
+El tipo mas general es</div>
+
+
+<div class="giftMO">
+\item <div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+foo :: (Ord a, Eq b) \=> a -> a -> b -> b -> a -> Bool</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+foo :: (Ord a, Ord b, Eq c, Eq d, Ord e) \=> a -> b -> c -> d -> e -> Bool</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+foo :: (Ord a) \=> a -> a -> a -> a -> a -> Bool</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+No tiene  # Analice el tipo de</div>
+
+<span class="giftCode">
+((a \=\= e, b < e), c \=\= d)</span>
+
+<div class="giftFragmento">
+. Cuando puedo comparar dos valores?</div>
+
+
+</div>
+
+<div class="giftFragmento">
+</div>
+
+
+<div class="giftComentario">
+ 
+</div>
+
+<div class="giftComentario">
+ 
+</div>
+<span class="giftNombre">
+Otras_P18_3</span>
+<div class="giftFragmento">
+Dada la siguiente definicion:</div>
+
+<span class="giftCode">
+map' f = (map (uncurry ($))) . box</span>
+
+<div class="giftFragmento">
+¿Cual de las siguientes implementaciones de</div>
+
+<span class="giftCode">
+box</span>
+
+<div class="giftFragmento">
+hace que</div>
+
+<span class="giftCode">
+map'</span>
+
+<div class="giftFragmento">
+sea equivalente a</div>
+
+<span class="giftCode">
+map</span>
+
+<div class="giftFragmento">
+?</div>
+
+
+<div class="giftShort">
+\item <div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+zip (repeat f)</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+No hay implementacion posible de</div>
+
+<span class="giftCode">
+box</span>
+
+<div class="giftFragmento">
+para eso.</div>
+
+
+\item <div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+zipWith f</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+zip f</span>
+
+<div class="giftFragmento">
+</div>
+
+
+</div>
+
+<div class="giftFragmento">
+</div>
+
+
+<div class="giftComentario">
+ 
+</div>
+
+<div class="giftComentario">
+ 
+</div>
+<span class="giftNombre">
+Otras_P18_4</span>
+<div class="giftFragmento">
+Dada la siguiente definicion:</div>
+
+<span class="giftCode">
+bar f n xs = concat $ map (f n) xs</span>
+
+<div class="giftFragmento">
+Cual de las siguientes afirmaciones no es correcta?</div>
+
+
+<div class="giftMO">
+\item <div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+sum . bar const 1</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftMATH">
+\equiv</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+length</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+El tipo es</div>
+
+<span class="giftCode">
+bar :: (a -> b -> [c]) -> a -> [b] -> [c]</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+bar take 2 [[1,2], [3,4,5]]</span>
+
+<div class="giftFragmento">
+retorna</div>
+
+<span class="giftCode">
+[1,2,3,4]</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+bar (\\f x -> [f x])</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftMATH">
+\equiv</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+map</span>
+
+<div class="giftFragmento">
+</div>
+
+
+</div>
+
+<div class="giftFragmento">
+</div>
+
+
+<div class="giftComentario">
+ 
+</div>
+
+<div class="giftComentario">
+ 
+</div>
+<span class="giftNombre">
+Algebraicos_P18_5</span>
+<div class="giftFragmento">
+Cual de las siguientes afirmaciones es correcta?</div>
+
+
+<div class="giftMO">
+\item <div class="giftFragmento">
+Dado</div>
+
+<span class="giftCode">
+t</span>
+
+<div class="giftFragmento">
+de tipo</div>
+
+<span class="giftCode">
+A</span>
+
+<div class="giftFragmento">
+,</div>
+
+<span class="giftCode">
+snd (copia t)</span>
+
+<div class="giftFragmento">
+siempre diverge o retorna un entero no negativo</div>
+
+
+\item <div class="giftFragmento">
+El codigo no compila porque la definicion de</div>
+
+<span class="giftCode">
+A</span>
+
+<div class="giftFragmento">
+es incorrecta</div>
+
+
+\item <div class="giftFragmento">
+El codigo no compila porque la definicion de</div>
+
+<span class="giftCode">
+A</span>
+
+<div class="giftFragmento">
+es incorrecta</div>
+
+
+\item <div class="giftFragmento">
+El codigo no compila porque la definicion de</div>
+
+<span class="giftCode">
+copia</span>
+
+<div class="giftFragmento">
+es incorrecta</div>
+
+
+\item <div class="giftFragmento">
+Dado</div>
+
+<span class="giftCode">
+t</span>
+
+<div class="giftFragmento">
+de tipo</div>
+
+<span class="giftCode">
+A</span>
+
+<div class="giftFragmento">
+,</div>
+
+<span class="giftCode">
+fst (copia t)</span>
+
+<div class="giftFragmento">
+siempre diverge o retorna</div>
+
+<span class="giftCode">
+t</span>
+
+<div class="giftFragmento">
+</div>
+
+
+</div>
+
+<div class="giftFragmento">
+</div>
+
+
+<div class="giftComentario">
+ 
+ 
+</div>
+
+<div class="giftComentario">
+ 
+</div>
+<span class="giftNombre">
+Algebraicos_P18_5</span>
+<div class="giftFragmento">
+Cual de las siguientes afirmaciones es correcta?</div>
+
+
+<div class="giftMO">
+\item <div class="giftFragmento">
+Dado</div>
+
+<span class="giftCode">
+t</span>
+
+<div class="giftFragmento">
+de tipo</div>
+
+<span class="giftCode">
+A</span>
+
+<div class="giftFragmento">
+,</div>
+
+<span class="giftCode">
+snd (copia t)</span>
+
+<div class="giftFragmento">
+siempre diverge o retorna un entero no negativo</div>
+
+
+\item <div class="giftFragmento">
+El codigo no compila porque la definicion de</div>
+
+<span class="giftCode">
+A</span>
+
+<div class="giftFragmento">
+es incorrecta</div>
+
+
+\item <div class="giftFragmento">
+El codigo no compila porque la definicion de</div>
+
+<span class="giftCode">
+copia</span>
+
+<div class="giftFragmento">
+es incorrecta</div>
+
+
+\item <div class="giftFragmento">
+Dado</div>
+
+<span class="giftCode">
+t</span>
+
+<div class="giftFragmento">
+de tipo</div>
+
+<span class="giftCode">
+A</span>
+
+<div class="giftFragmento">
+,</div>
+
+<span class="giftCode">
+fst (copia t)</span>
+
+<div class="giftFragmento">
+siempre diverge o retorna</div>
+
+<span class="giftCode">
+t</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+El codigo no compila porque la definicion de</div>
+
+<span class="giftCode">
+A</span>
+
+<div class="giftFragmento">
+es incorrecta</div>
+
+
+</div>
+
+<div class="giftFragmento">
+</div>
+
+
+<div class="giftComentario">
+ 
+</div>
+
+<div class="giftComentario">
+ 
+</div>
+<span class="giftNombre">
+Algebraicos_P18_6</span>
+<div class="giftFragmento">
+Dadas las siguientes definiciones:</div>
+
+<span class="giftCode">
+data T = C1 | C2 Int Int | C3 T T</span>
+
+<div class="giftFragmento">
+,</div>
+
+<span class="giftCode">
+baz C1       = 0</span>
+
+<div class="giftFragmento">
+,</div>
+
+<span class="giftCode">
+baz (C2 x y) = x</span>
+
+<div class="giftFragmento">
+,</div>
+
+<span class="giftCode">
+baz (C3 x y) = baz x</span>
+
+<div class="giftFragmento">
+.
+¿Cual de las siguientes afirmaciones es correcta?</div>
+
+
+<div class="giftMO">
+\item <div class="giftFragmento">
+El resultado de evaluar</div>
+
+<span class="giftCode">
+baz (C3 (C2 3 4) (C3 (C2 1 2) C1))</span>
+
+<div class="giftFragmento">
+es</div>
+
+<span class="giftCode">
+3</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+El resultado   de evaluar</div>
+
+<span class="giftCode">
+baz (C3 (C2 3 4) (C3 (C2 1 2) C1))</span>
+
+<div class="giftFragmento">
+es</div>
+
+<span class="giftCode">
+7</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+El   resultado de   evaluar</div>
+
+<span class="giftCode">
+baz (C3 (C2 3 4) (C3 (C2 1 2) C1))</span>
+
+<div class="giftFragmento">
+es</div>
+
+<span class="giftCode">
+7</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+El resultado de evaluar</div>
+
+<span class="giftCode">
+baz (C3 (C2 3 4) (C3 (C2 1 2) C1))</span>
+
+<div class="giftFragmento">
+es</div>
+
+<span class="giftCode">
+1</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+El codigo no compila</div>
+
+
+</div>
+
+<div class="giftFragmento">
+</div>
+
+
+<div class="giftComentario">
+ 
+</div>
+
+<div class="giftComentario">
+ 
+</div>
+<span class="giftNombre">
+Fold_P18_7</span>
+<div class="giftFragmento">
+Dada la siguiente definicion:</div>
+
+<span class="giftCode">
+qux f []     ys = ys</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+qux f (x:xs) ys = qux f xs (f x : ys)</span>
+
+<div class="giftFragmento">
+Cual de las siguientes afirmaciones es correcta?</div>
+
+
+<div class="giftMO">
+\item <div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+qux f</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftMATH">
+\equiv</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+flip $ foldl (\\r x -> f x : r)</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+qux f</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftMATH">
+\equiv</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+foldl (\\r x -> f x : r)</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+qux f</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftMATH">
+\equiv + 2</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+foldl (\\r x -> f x : r)</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+qux f</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftMATH">
+\equiv +  2</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+flip $ foldr (\\x r -> f x : r)</span>
+
+<div class="giftFragmento">
+</div>
+
+
+\item <div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+qux f</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftMATH">
+\equiv</span>
+
+<div class="giftFragmento">
+</div>
+
+<span class="giftCode">
+foldr (\\x r -> f x : r)</span>
+
+<div class="giftFragmento">
+</div>
+
+
+</div>
+
+<div class="giftFragmento">
+</div>
+
+
+<div class="giftComentario">
+ 
+</div>
+
+	</body>
+</html>
